@@ -6,12 +6,14 @@ function randomNumberGen(min, max) {
 
 
 var simonNumbers = [];
+var userNumbers = [];
 var numbersResult = [];
 var gameResult = document.getElementById('game-result');
 
 // Alert con i numeri random
-for (var i = 0; i < 5; i++) {
-	simonNumbers.push(randomNumberGen(1, 100));
+while (simonNumbers.length < 5) {
+  var randomNumber = randomNumberGen(1, 100);
+    simonNumbers.push(randomNumber);
 }
 alert('I numeri sono: ' + simonNumbers);
 
@@ -26,10 +28,16 @@ setTimeout(function() {
 			alert('Il numero inserito non è valido');
 			p--;
 		}
+		if (userNumbers.includes(userNumber)) {
+			alert('Hai già scelto questo numero');
+			p--;
+		} else {
+			userNumbers.push(userNumber);
+		}
 		if (simonNumbers[p] === userNumber) {
 			numbersResult.push(userNumber);
 		}
 	}
 	// Esito partita
 	gameResult.innerHTML = 'Hai indovinato <strong> ' + numbersResult.length + '</strong> numeri, ovvero: ' + numbersResult;
-}, 30000);
+}, 1000);
