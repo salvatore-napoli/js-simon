@@ -40,4 +40,4 @@ setTimeout(function() {
 	}
 	// Esito partita
 	gameResult.innerHTML = 'Hai indovinato <strong> ' + numbersResult.length + '</strong> numeri, ovvero: ' + numbersResult;
-}, 1000);
+}, 30000);
