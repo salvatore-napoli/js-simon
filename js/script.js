@@ -13,7 +13,9 @@ var gameResult = document.getElementById('game-result');
 // Alert con i numeri random
 while (simonNumbers.length < 5) {
   var randomNumber = randomNumberGen(1, 100);
-    simonNumbers.push(randomNumber);
+	if (!simonNumbers.includes(randomNumber)) {
+		simonNumbers.push(randomNumber);		
+	}
 }
 alert('I numeri sono: ' + simonNumbers);
 
